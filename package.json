@@ -1,0 +1,27 @@
+{
+  "name": "mok",
+  "version": "0.0.1",
+  "description": "Featureless MVVM framework for browser javascript.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "handlebars": "^2.0.0",
+    "jquery": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "browserify ./test/test.js > ./test/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/NickDoth/mok.git"
+  },
+  "keywords": [
+    "mvvm",
+    "javascript"
+  ],
+  "author": "nickdoth",
+  "license": "MIT"
+}

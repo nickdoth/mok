@@ -1,3 +1,7 @@
+node_modules
+test/bundle.js
+test/_others
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

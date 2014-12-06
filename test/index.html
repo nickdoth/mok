@@ -1,0 +1,22 @@
+<script type="text/javascript" src="./bundle.js"></script>
+
+<div mk-controller="demo-form">
+	<form mk-action="submit: submit">
+		<h2>
+			Welcome our new member <span mk-action="text: data.name"></span>
+		</h2>
+
+		<div>
+			Input your name: <input mk-action="value: data.name"/>
+		</div>
+
+		<div>
+			Your email: <input mk-action="value: data.defaultEmail"/>
+		</div>
+
+		<input type="submit" value="Submit">
+	</form>
+
+</div>
+
+
