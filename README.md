@@ -16,6 +16,7 @@ npm link
 
 # ...Then in your project
 npm link mok
+```
 
 ## Test
 
@@ -24,7 +25,7 @@ npm link mok
 npm install -g browserify
 # run npm test and open test/index.html in a browser:
 npm test
-
+```
 
 ## Usage
 
