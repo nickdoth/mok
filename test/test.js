@@ -1,4 +1,4 @@
-window.Scope = require('../lib/scope')
+window.Scope = require('../lib/scope').Scope
 
 var $ = require('jquery')
 var mk = require('..')
@@ -10,7 +10,11 @@ mk.controller('demo-form', function ($scope) {
       name: '',
       defaultEmail: mk.relation(function () {
         return this.name + '@maple.com'
-      }).to(['name'])
+      }).to(['name']),
+      queries: [
+        { id: 1, value: 'foo' },
+        { id: 2, value: 'bar' }
+      ]
     },
     
     submit: function () {
@@ -18,6 +22,8 @@ mk.controller('demo-form', function ($scope) {
       return false
     }
   })
+
+  window.demoScope = $scope
 })
 
 $(document).ready(function () {

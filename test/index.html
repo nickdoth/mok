@@ -2,21 +2,30 @@
 
 <div mk-controller="demo-form">
   <form mk-action="submit: submit">
-    <h2>
-      Welcome our new member <span mk-action="text: data.name"></span>
-    </h2>
+    
+    <div mk-action="with: data">
+      <h2>
+        Welcome our new member <span mk-action="text: name"></span>
+      </h2>
 
-    <div>
-      Input your name: <input mk-action="value: data.name"/>
-    </div>
+      <div>
+        Input your name: <input mk-action="typing: name"/>
+      </div>
 
-    <div>
-      Your email: <input mk-action="value: data.defaultEmail"/>
+      <div>
+        Your email: <input mk-action="typing: defaultEmail"/>
+      </div>
+
+      <div mk-action="repeat: queries">
+        <div>
+          ID: <span mk-action="text: id"></span>&nbsp;
+          Value: <span mk-action="text: value"></span>
+        </div>
+      </div>
+
     </div>
 
     <input type="submit" value="Submit">
   </form>
 
 </div>
-
-
