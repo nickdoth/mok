@@ -9,17 +9,21 @@ mk.controller('demo-form', function ($scope) {
     data : {
       name: '',
       defaultEmail: mk.relation(function () {
-        return this.name + '@maple.com'
+        return this.name + '@domain.com'
       }).to(['name']),
       queries: [
-        { id: 1, value: 'foo' },
-        { id: 2, value: 'bar' }
+        { name: 'Jack', email: 'jack@domain.com' },
+        { name: 'Tony', email: 'tony@domain.com' }
       ]
     },
     
     submit: function () {
       alert('This should be called on submit.')
       return false
+    },
+
+    add: function () {
+      this.data.queries.push({ name: this.data.name, email: this.data.defaultEmail })
     }
   })
 

@@ -5,7 +5,7 @@
     
     <div mk-action="with: data">
       <h2>
-        Welcome our new member <span mk-action="text: name"></span>
+        Adding new member <span mk-action="text: name"></span>
       </h2>
 
       <div>
@@ -13,19 +13,29 @@
       </div>
 
       <div>
-        Your email: <input mk-action="typing: defaultEmail"/>
+        Your email: <input mk-action="typing: defaultEmail" disabled/>
       </div>
-
-      <div mk-action="repeat: queries">
-        <div>
-          ID: <span mk-action="text: id"></span>&nbsp;
-          Value: <span mk-action="text: value"></span>
-        </div>
-      </div>
-
     </div>
 
-    <input type="submit" value="Submit">
+    <table>
+
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody mk-action="repeat: data.queries">
+        <tr>
+          <td mk-action="text: name"></td>
+          <td mk-action="text: email"></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <input type="button" value="Add" mk-action="click: add">
   </form>
 
 </div>
