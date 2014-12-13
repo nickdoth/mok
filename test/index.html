@@ -1,9 +1,10 @@
 <script type="text/javascript" src="./bundle.js"></script>
 
-<div mk-controller="demo-form">
+<div mk-view="index">
   <form mk-action="submit: submit">
     
     <div mk-action="with: data">
+    <!-- with indexControlll.data -->
       <h2>
         Adding new member <span mk-action="text: name"></span>
       </h2>
@@ -15,7 +16,12 @@
       <div>
         Your email: <input mk-action="typing: defaultEmail" disabled/>
       </div>
+    <!-- /with -->
     </div>
+
+    <button type="button" mk-action="click: add; autofocus: true">Add</button>
+
+    <button type="button" mk-action="click: data.queries.removeAll">Remove All</button>
 
     <table>
 
@@ -27,15 +33,22 @@
       </thead>
 
       <tbody mk-action="repeat: data.queries">
+      <!-- for query in indexControll.data.queries -->
+        <!-- with query -->
         <tr>
           <td mk-action="text: name"></td>
           <td mk-action="text: email"></td>
+          <td >
+            <button type="button" href="javascript:" mk-action="click: remove">Remove</button>
+          </td>
         </tr>
+        <!-- /with -->
+      <!-- /for -->
       </tbody>
 
     </table>
 
-    <input type="button" value="Add" mk-action="click: add">
+    
   </form>
 
 </div>

@@ -2,6 +2,7 @@ node_modules
 unit-test
 test/bundle.js
 test/_others
+build-test
 
 # Windows image file caches
 Thumbs.db
