@@ -1,21 +1,21 @@
-window.Scope = require('../lib/scope').Scope
+var Scope = require('../lib/scope').Scope
 
 var $ = require('jquery')
 var mk = require('..')
-var Controller = window.Controller = require('../controller')
+var Controller = require('../controller')
 
-function Person (name, email) {
-  Scope.call(this, { name: name, email: email })
+class Person extends Scope {
+  constructor(name, email) {
+    super({ name: name, email: email });
+  }
+
+  remove() {
+    this.$parent.remove(this);
+  }
 }
 
-Person.prototype = Object.create(Scope.prototype)
-Person.prototype.constructor = Person
 
-Person.prototype.remove = function () {
-  this.$parent.remove(this)
-}
-
-var app = window.app = mk.createApp()
+var app = mk.createApp()
 app.Person = Person
 
 app.IndexController = Controller.Extend({
